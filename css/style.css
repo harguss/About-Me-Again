@@ -15,6 +15,9 @@ h1 {
   padding-bottom: 10px;
   font-size: 40px;
 }
+h2 {
+  font-size: 25px;
+}
 nav {
   background-color: rgb(240, 214, 107);
   
