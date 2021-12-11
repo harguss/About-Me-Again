@@ -57,12 +57,76 @@ let questionFive = prompt('True or False, I once waited on Weird Al Yankovich.')
 if(questionFive === 'False' || questionFive === 'false'){
   console.log('No it is true.');
   alert('I did! And he was a really nice man.');
-}else if(questionFive === 'True'  || questionFive === 'true'){
+}else if(questionFive === 'True' || questionFive === 'true'){
   alert('You are right! And he was a generous tipper!');
 }else('Answer true or false, please.');
 
+function questionSix(){
+  let guessNum = 7;
+  let chances = 4;
+
+  while(chances > 0){
+    chances = chances - 1;
+
+    let userResponse = prompt('How many years did I serve in the MN National Guard?');
+    console.log('userResponse is a string ', typeof(userResponse));
+
+    let userNumber =  Number(userResponse);
+    // console.log('userResponse is a num ', userNumber, typeof(userNumber));
+
+    if (!userResponse){
+      break;
+    }
+
+
+    if(userNumber === guessNum){
+      alert(userName + ' Well done!');
+      chances = 0;
+    }
+
+
+    if(userNumber < guessNum){
+      alert(userName + 'you are too low, keep trying!');
+    }
+
+
+  }
+  alert('the correct answer is ' + guessNum);
+}
+questionSix();
+
+
+
+let favoriteFood = ['Thai','Japanese','Italian','Middle Eastern','Indian Food','Vienamese','Chinese'];
+console.log(favoriteFood.length);
+
+let attempts = 0;
+let correctAnswer = 0;
+
+while(attempts !== 7){
+  let userAnswer = prompt('Guess my top 7 favorite types of food.');
+  let userAnswerTrimmedToUpperCase = userAnswer.toLowerCase().trim();
+  console.log('userAnswerTrimmedToUpperCase',userAnswerTrimmedToUpperCase);
+
+  if(favoriteFood.indexOf(userAnswerTrimmedToUpperCase) >= 0){
+    alert('Yes! ' + userAnswerTrimmedToUpperCase + ' is one of my favorite types of food.');
+    correctAnswer = correctAnswer + 1;
+
+  } else {
+    alert('Not my favorite, but I like that too!@!!#%^#%%^');
+  }
+
+  attempts = attempts + 1;
+
+}
+
+alert('All of my favorite types of food are: ' + favoriteFood.join(', '));
+alert('You answered ' + correctAnswer + ' out of 7 correctly');
+
 
 alert('Thank you ' + userName + ', for taking the time to have a bit of fun and get to know me.');
+
+
 
 
 
