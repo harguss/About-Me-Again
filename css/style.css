@@ -23,11 +23,13 @@ nav {
   
 }
 button {
-  color : darkgoldenrod;
+  color : #b8860b;
   background-color: rgb(240, 214, 107);
   
 
 }
+.link { color: #b8860b; } 
+.link:hover { color: #3b853b; } /* CSS link hover (green) */
 
 main {
   
