@@ -113,7 +113,7 @@ while(attempts !== 7){
     correctAnswer = correctAnswer + 1;
 
   } else {
-    alert('Not my favorite, but I like that too!@!!#%^#%%^');
+    alert('Not my favorite, but I like that too!' + userName);
   }
 
   attempts = attempts + 1;

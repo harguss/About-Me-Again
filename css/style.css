@@ -29,7 +29,7 @@ button {
 
 }
 .link { color: #b8860b; } 
-.link:hover { color: #3b853b; } /* CSS link hover (green) */
+.link:hover { color: #3b853b; } 
 
 main {
   
@@ -37,7 +37,7 @@ main {
 }
 
 img {
-  width: 200px;
+  width: 90px;
   opacity: 0.5;
   }
 
