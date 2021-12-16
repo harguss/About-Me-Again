@@ -41,25 +41,28 @@ function functionThree(){
 functionThree();
 
 
+function functionFour(){
+  let questionFour = prompt('Can you believe I have three daughters and three sons just like on the Brady Bunch?');
 
-let questionFour = prompt('Can you believe I have three daughters and three sons just like on the Brady Bunch?');
-
-if(questionFour === 'no' || questionFour === 'No' || questionFour === 'no way') {
-  console.log('You are right!');
-  alert('You are right, I have two sons.');
-}else if(questionFour === 'yes' || questionFour === 'Yes' || questionFour === 'Yes'){
-  alert('Silly!! I have two sons.');
-}else('Take a guess, yes or no.');
+  if(questionFour === 'no' || questionFour === 'No' || questionFour === 'no way') {
+    console.log('You are right!');
+    alert('You are right, I have two sons.');
+  }else if(questionFour === 'yes' || questionFour === 'Yes' || questionFour === 'Yes'){
+    alert('Silly!! I have two sons.');
+  }else('Take a guess, yes or no.');
 
 
-let questionFive = prompt('True or False, I once waited on Weird Al Yankovich.');
+  let questionFive = prompt('True or False, I once waited on Weird Al Yankovich.');
 
-if(questionFive === 'False' || questionFive === 'false'){
-  console.log('No it is true.');
-  alert('I did! And he was a really nice man.');
-}else if(questionFive === 'True' || questionFive === 'true'){
-  alert('You are right! And he was a generous tipper!');
-}else('Answer true or false, please.');
+  if(questionFive === 'False' || questionFive === 'false'){
+    console.log('No it is true.');
+    alert('I did! And he was a really nice man.');
+  }else if(questionFive === 'True' || questionFive === 'true'){
+    alert('You are right! And he was a generous tipper!');
+  }else('Answer true or false, please.');
+}
+
+functionFour();
 
 function questionSix(){
   let guessNum = 7;
@@ -74,8 +77,9 @@ function questionSix(){
     let userNumber =  Number(userResponse);
     // console.log('userResponse is a num ', userNumber, typeof(userNumber));
 
-    if (!userResponse){
-      break;
+    if (userNumber > guessNum){
+      alert(userName + 'You are too high, keep trying!');
+      // break;
     }
 
 
@@ -96,31 +100,34 @@ function questionSix(){
 questionSix();
 
 
+function questionSeven() {
+  let favoriteFood = ['thai','japanese','italian','middle eastern','indian','vietnamese','chinese'];
+  console.log(favoriteFood.length);
 
-let favoriteFood = ['Thai','Japanese','Italian','Middle Eastern','Indian Food','Vienamese','Chinese'];
-console.log(favoriteFood.length);
+  let attempts = 0;
+  let correctAnswer = 0;
 
-let attempts = 0;
-let correctAnswer = 0;
+  while(attempts !== 7){
+    let userAnswer = prompt('Guess my top 7 favorite types of food.');
+    let userAnswerTrimmedToUpperCase = userAnswer.toLowerCase().trim();
+    console.log('userAnswerTrimmedToUpperCase',userAnswerTrimmedToUpperCase);
 
-while(attempts !== 7){
-  let userAnswer = prompt('Guess my top 7 favorite types of food.');
-  let userAnswerTrimmedToUpperCase = userAnswer.toLowerCase().trim();
-  console.log('userAnswerTrimmedToUpperCase',userAnswerTrimmedToUpperCase);
+    if(favoriteFood.indexOf(userAnswerTrimmedToUpperCase) >= 0){
+      alert('Yes! ' + userAnswerTrimmedToUpperCase + ' is one of my favorite types of food.');
+      correctAnswer = correctAnswer + 1;
 
-  if(favoriteFood.indexOf(userAnswerTrimmedToUpperCase) >= 0){
-    alert('Yes! ' + userAnswerTrimmedToUpperCase + ' is one of my favorite types of food.');
-    correctAnswer = correctAnswer + 1;
+    } else {
+      alert('Not my favorite, but I like that too!' + userName);
+    }
 
-  } else {
-    alert('Not my favorite, but I like that too!' + userName);
+    attempts = attempts + 1;
+
   }
-
-  attempts = attempts + 1;
-
 }
 
-alert('All of my favorite types of food are: ' + favoriteFood.join(', '));
+questionSeven();
+
+alert('All of my favorite types of food are: Thai, Japanese, Italian, Middle Eastern, Indian, Vietnamese, Chinese');
 alert('You answered ' + correctAnswer + ' out of 7 correctly');
 
 
